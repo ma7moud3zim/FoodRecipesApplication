@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".SplashActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <SearchView
+                android:id="@+id/srch_vw"
+                android:layout_width="match_parent"
+                android:layout_marginTop = "20dp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@drawable/srch_bg"
+                android:layout_height="wrap_content"
+                android:queryHint="Search for Dish"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_20sdp"
+                android:textColor="@color/black"
+                android:text="All Categories"
+                android:fontFamily="monospace"
+                android:textStyle = "bold"
+                android:padding="@dimen/_10sdp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mainCateg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:itemCount="1"
+                android:orientation="horizontal"
+                tools:listitem="@layout/item_rv_main_category"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                 />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_20sdp"
+                android:textColor="@color/black"
+                android:id = "@+id/tvCateg"
+                android:text="Category Name"
+                android:textStyle = "bold"
+                android:fontFamily="monospace"
+                android:padding="@dimen/_10sdp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/subCateg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:itemCount="1"
+                android:orientation="horizontal"
+                tools:listitem="@layout/item_rv_sub_category"
+               />
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>
